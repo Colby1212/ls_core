@@ -1,0 +1,81 @@
+Question 1
+
+Yes the code will raise an error because the index 6 is out of range(0, 1, 2).
+Trying to access an index not within the range will raise an IndexError error. 
+
+
+Question 2
+
+If you are looking for True or False you can try using
+
+print(str1.endswith("!"))
+print(str2.endswith("!"))
+print(str1[-1] == "!")
+print(str2[-1] == "!")
+
+Question 3
+
+Here we can try 
+
+famous_words = "seven years ago..."
+str1 = f'Four score and {famous_words}'
+str1 = "Four score and " + famous_words
+
+Question 4
+
+Here we can try the capitalize() method. 
+
+munster_description = "the Munsters are CREEPY and Spooky."
+print(munster_description.capitalize())
+
+
+Question 5
+
+Here we can use the swapcase() method. 
+
+munsters_description = "The Munsters are creepy and spooky."
+print(munsters_description.swapcase()) #prints --> tHE mUNSTERS ARE CREEP AND SPOOKY
+
+Question 6
+
+If we want to check if "Dino" is in either of the strings we can try 
+
+print("Dino" in str1)
+print("Dino" in str2)
+
+Quesiton 7 
+
+We can use the append method.
+
+flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"]
+flintstones.append("Dino")
+#["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles", "Dino"]
+
+Question 8
+
+We can use the .extend method to add Dino and Hoppy to our list. 
+
+flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"]
+flintstones.extend(["Dino", "Hoppy"])
+
+Question 9
+
+Here we can use the .split method and then iteraete through the list and stop when
+"house" is the item in the list. 
+
+advice = "Few Things in life are as important as house training your pet dinosaur"
+
+beginning_of_advice = ''
+for words in advice.split():
+    if words == "house":
+        break
+    beginning_of_advice += words + " "
+
+print(beginning_of_advice)
+
+#LS solution --> print(advice.split('house'[0]))
+
+Question 10
+
+advice = "Few Things in life are as important as house training your pet dinosaur"
+print(advice.replace("important", "urgent"))

@@ -1,0 +1,42 @@
+Question 1
+
+numbers = [1, 2, 3, 4]
+
+numbers.clear()
+
+#LS solution ==> 
+while numbers:
+     numbers.pop()
+
+
+Question 2
+
+[1, 2, 3, 4, 5]
+
+Question 3
+
+This will print Hello there
+
+Question 4
+
+This will print
+
+"[{"first": 42}, {"second": "value2"}, 3, 4, 5]"
+
+because when we create a copy of the list, a copy of the collections found in indexes 1 and 0 are not copied over as well.
+Rather what was copied was that both of these indexes point to a collection. 
+The reference was copied but not the actual collection. 
+Therefore if we make changes to the collection, they are still reflected in both copies of the list. 
+If we want to avoid this, we should create a deep copy of the list using copy.deepcopy(). 
+A deep copy will not copy the referemce but copy the collection the pointer is pointing to. 
+
+
+Question 5
+
+def is_color_valid(color):
+    return color == "blue" or color == "green"
+
+#LS solution ==>
+
+def is_color_valid(color):
+    return color in ['blue', 'green']

@@ -1,0 +1,66 @@
+Question 1
+
+No it does not return the same thing. The first function
+returns 'prop1': "hi there". but the second function just returns None. 
+This is because the curly brackets in the second function are on 
+a seperate line than return. Therefore the second function simply ignores 
+the curly brackets and everything inside and returns None. 
+
+Question 2
+
+
+I think 
+print(num_list) will print [1, 2], and
+print(fictionary) will print {'first': [1]}
+
+#LS answer
+Since num_list is a reference to the original list in dictionary,
+appending to num_list modifies the list! Therefore the dicitonary 
+was also updated. 
+
+Question 3
+
+A)
+These would print as followed
+one is ['one']
+two is ['two']
+three is ['three']
+
+The variables insides the mess_with_vars function are local variables.
+These are shadowing the global variables one, two, and three. The changes to the 
+local variables are not reflected when we print one, two, and three outside
+of the function. 
+
+B)
+Similar to my answer in question 3A, these are local variables inside the function
+and so changes made to the local variables are not going to be reflected when we 
+print the variables outside of the function. 
+
+C)
+These would print 
+one is ['two']
+two is ['three']
+three os ['one']
+
+This is because in the function we aren't reassigning the variables 
+to different values but rather directly accessing the lists at index 0.
+Because lists are a mutable data type, changes made in the function will be 
+reflected outside of the function as well. 
+
+4. 
+def is_dot_seperated_ip_address(input_string):
+    dot_separated_words = input_string.split(".")
+    if len(dot_separated_words) != 4:
+        return False
+    for number in dot_seperated_words:
+        if not is_an_ip_number(number):
+            return False
+        return True
+    
+    else:
+        return False
+        
+
+5. 
+ I would imagine that the last line would raise a NameError because
+ greeting is not defined unless the first block of code is False. 
