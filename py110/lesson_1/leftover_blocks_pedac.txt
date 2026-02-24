@@ -1,0 +1,58 @@
+Step 1: P - Understand the Problem
+
+input: integer
+
+output: integer (remainder of blocks)
+
+explicit rules:
+1. top layer is a single block
+2. An upper block must be supported by 4 blocks in a lower layer
+3. no gaps between blocks
+4. A block can support more than one block in an upper layer
+
+
+Implicit rules:
+1. 1 lower block can support 4 upperblocks(1/4)
+2. Blocks need to have enough for a complete layer or they are considered leftover (complete structure)
+3. # of blocks per layer = (layer #)**2 unless layers can have extra blocks or do not have to be perfectly square. 
+
+Step 2: E - Examples and Test Cases
+
+print(calculate_leftover_blocks(0) == 0)  # True
+print(calculate_leftover_blocks(1) == 0)  # True
+print(calculate_leftover_blocks(2) == 1)  # True
+print(calculate_leftover_blocks(4) == 3)  # True
+print(calculate_leftover_blocks(5) == 0)  # True
+print(calculate_leftover_blocks(6) == 1)  # True
+print(calculate_leftover_blocks(14) == 0) # True
+
+1 layer = total 1 block
+2 layers = total 5 blocks
+3 layers = total 14 blocks
+4 layers = total 30 blocks
+
+
+Answers question - each layer will have the exact amount needed to support the upper layer
+
+
+Step 3: D - Data Structures
+increment counter by # of blocks needed 
+
+
+Step 4: A - Algorithm 
+build from top to bottom
+after each layer do we have enough remaining blocks for the next
+if not enough than that is the remainder. 
+
+1. input is number of blocks remaining
+2. current layer = 1
+3. blocks required per layer is current layer number squared
+
+4. check if the blocks required is greater than or equal to remaining blocks. 
+    if blocks required is less than blocks remaining subtract number of blocks required from remaining blocks
+        increment the current layer by 1
+    if blocks required is greater than blocks remaining than the remaining blocks is # of blocks remaining
+        return remaining blocks
+5. repeat 4 until blocks required is greater than or equal to blocks remaining (hints at a loop)
+
+Step 5: C - Implement a Solution in Code

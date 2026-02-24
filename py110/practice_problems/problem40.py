@@ -1,0 +1,1 @@
+write a function that takes a year as an argument and returns the number of friday the 

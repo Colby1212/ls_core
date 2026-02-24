@@ -1,0 +1,90 @@
+1. P - Understand the Problem
+
+inputs - List of strings,
+
+outputs - List of strings ordered from highest adjacent consonants to lowest
+
+- What is a consonant? 
+- What if we get non-alphabetic characters such as a number?
+- How are we sorting the list? from most to least or from least to most?
+- When it says they should retain their original order in relation to each other what does this mean?
+
+explicit rules
+
+- if two strings contain the same highest number of adjacent consonants, they should retain their original order in relation to each other.
+- Consonants are considered adjacent if they are next to each other in the same word or if there is a space between two consonants in adjacent words.
+- sort the list based on the highest number of adjacent consonants a string contains and return the sorted list
+
+
+implicit rules
+
+- strings may contain more than one word 
+
+2. E - Examples and Test Cases
+
+my_list = ['aa', 'baa', 'ccaa', 'dddaa']
+print(sort_by_consonant_count(my_list))
+# ['dddaa', 'ccaa', 'aa', 'baa']
+
+my_list = ['can can', 'toucan', 'batman', 'salt pan']
+print(sort_by_consonant_count(my_list))
+# ['salt pan', 'can can', 'batman', 'toucan']
+
+my_list = ['bar', 'car', 'far', 'jar']
+print(sort_by_consonant_count(my_list))
+# ['bar', 'car', 'far', 'jar']
+
+my_list = ['day', 'week', 'month', 'year']
+print(sort_by_consonant_count(my_list))
+# ['month', 'day', 'week', 'year']
+
+my_list = ['xxxa', 'xxxx', 'xxxb']
+print(sort_by_consonant_count(my_list))
+# ['xxxx', 'xxxb', 'xxxa']
+
+
+- The list should be sorted from greatest to least 
+- no instance of empty strings or non alphabetic characters.
+- we are only looking at adjacent consonants, not single ones so 1 and 0 are the same and should remain in the same order 
+
+3. D - Data Structures
+
+Collection of strings that are ordered from most to least adjacent consonants
+
+4. A - Algorithm
+Start with a collection of strings
+remove all white spaces and check for greatest amount of adjacent consonants
+add string to a list depending on how many adjacent consonants there are (how to maintian order)
+repeat steps 2 and 3 (loop)
+return list with ordered strings
+
+create a function that counts the amount of adjacent consonants
+- take a string
+- remove white spaces
+- replace vowels
+- check for most amount of adjacent consonants
+
+5. C - Implement a Solution in Code
+
+
+def count_max_adjacent_consonants(string):
+    string = ''.join(string.split(' '))
+    max_consonant_count = 0
+    adjacent_consonants = ''
+
+    for letter in string:
+        if letter.lower in 'bcdfghjklmnpqrstvxyz':
+            adjacent_consonants += letter
+            if len(adjacent_consonants) > max_consonant_count: 
+                if len(adjacnet_consonants)> 1:
+                    max+consonant_count = len(adjacent_consonants)
+
+        else:
+            if leng(adjacent_consonants) > max_consonant_count:
+                if len(adjacent_condonants) > 1:
+                    max_consonant_count = len(adjacent_consonants)
+
+            adjacent_consonants = ''
+        
+    return max_consonant_count
+            
